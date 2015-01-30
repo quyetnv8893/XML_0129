@@ -1,22 +1,21 @@
-﻿using MatchManagement.Models;
+﻿using PlayerManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using XML_0129_1008_QuyetNV.Models;
 
 namespace PlayerManagement.Controllers
 {
-    public class MatchController2 : Controller
+    public class MatchController : Controller
     {
         // GET: Match
         private IMatchRepository _repository;
-        public MatchController2(): this(new MatchRepository())
+        public MatchController(): this(new MatchRepository())
         {
         }
 
-        public MatchController2(IMatchRepository repository)
+        public MatchController(IMatchRepository repository)
         {
             _repository = repository;
         }
@@ -88,7 +87,15 @@ namespace PlayerManagement.Controllers
             }
 
             return View(match);
-        }       
+        }
+
+        public ActionResult Delete(String id)
+        {
+            Match match = _repository.GetMatchByID(id);
+            if (match == null)
+                return RedirectToAction("Index");
+            return View(match);
+        }
 
         [HttpPost]
         public ActionResult Delete(Match match)

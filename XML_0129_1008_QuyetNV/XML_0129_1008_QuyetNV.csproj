@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XML_0129_1008_QuyetNV</RootNamespace>
-    <AssemblyName>XML_0129_1008_QuyetNV</AssemblyName>
+    <RootNamespace>PlayerManagement</RootNamespace>
+    <AssemblyName>PlayerManagement</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -116,11 +116,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IMatchRepository.cs" />
-    <Compile Include="Models\IPlayerRepository.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRepository.cs" />
-    <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\PlayerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,15 +166,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Match\Index.cshtml" />
-    <Content Include="Views\Player\Create.cshtml" />
-    <Content Include="Views\Player\Delete.cshtml" />
-    <Content Include="Views\Player\Details.cshtml" />
-    <Content Include="Views\Player\Edit.cshtml" />
-    <Content Include="Views\Player\Index.cshtml" />
-    <Content Include="Views\Player\List.cshtml" />
     <Content Include="Views\Match\Edit.cshtml" />
     <Content Include="Views\Match\Details.cshtml" />
     <Content Include="Views\Match\Create.cshtml" />
+    <Content Include="Views\Match\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

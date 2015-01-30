@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace XML_0129_1008_QuyetNV.Models
+namespace PlayerManagement.Models
 {    
     public class Match
     {

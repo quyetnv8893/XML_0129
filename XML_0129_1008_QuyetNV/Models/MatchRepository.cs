@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Xml.Linq;
-using XML_0129_1008_QuyetNV.Models;
+using PlayerManagement.Models;
 
-namespace MatchManagement.Models
+namespace PlayerManagement.Models
 {
     public class MatchRepository : IMatchRepository
     {
@@ -54,12 +54,15 @@ namespace MatchManagement.Models
         /**
          * Insert new match
          **/
-        public void InsertMatch(Match Match)
-        {
-            
-            MatchData.Descendants("matches").FirstOrDefault().Add(new XElement("match", new XElement("id", Match.id),
-                new XElement("time", Match.time), new XElement("name", Match.name), new XElement("score", Match.score),
-                new XElement("leagueName", Match.leagueName)));
+        public void InsertMatch(Match match)
+        {            
+            if (match.id == null)
+            {
+                match.id = ((int)(DateTime.Now - new DateTime(1970, 1, 1)).TotalSeconds).ToString(); 
+            }
+            MatchData.Descendants("matches").FirstOrDefault().Add(new XElement("match", new XElement("id", match.id),
+                new XElement("time", match.time), new XElement("name", match.name), new XElement("score", match.score),
+                new XElement("leagueName", match.leagueName)));
             MatchData.Save(HttpContext.Current.Server.MapPath(xml_path));
         }
 
@@ -71,17 +74,7 @@ namespace MatchManagement.Models
             MatchData.Descendants("matches").Elements("match").Where(item => item.Element("id").Value.Equals(id)).Remove();
             MatchData.Save(HttpContext.Current.Server.MapPath(xml_path));
         }
-
-
-        /**
-         * Delete a match
-         **/
-        public void DeleteMatch(Match match)
-        {
-            this.DeleteMatch(match.id);
-        }
-
-
+       
         
         /**
          * Edit a match which it's id

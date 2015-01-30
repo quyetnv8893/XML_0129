@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace XML_0129_1008_QuyetNV
+namespace PlayerManagement
 {
     public class RouteConfig
     {

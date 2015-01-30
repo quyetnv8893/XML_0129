@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace XML_0129_1008_QuyetNV
+namespace PlayerManagement
 {
     public class FilterConfig
     {
