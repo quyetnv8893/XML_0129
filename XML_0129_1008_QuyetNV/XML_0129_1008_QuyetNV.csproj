@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlayerManagement</RootNamespace>
+    <RootNamespace>XML_0129_1008_QuyetNV</RootNamespace>
     <AssemblyName>XML_0129_1008_QuyetNV</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
@@ -111,23 +111,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MatchController2.cs" />
     <Compile Include="Controllers\MatchController.cs" />
-    <Compile Include="Controllers\PlayerAchievementsController.cs" />
-    <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Achievement.cs" />
-    <Compile Include="Models\AchievementRepository.cs" />
-    <Compile Include="Models\IAchievementRepository.cs" />
     <Compile Include="Models\IMatchRepository.cs" />
-    <Compile Include="Models\IPlayerAchievementRepository.cs" />
     <Compile Include="Models\IPlayerRepository.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRepository.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\PlayerAchievement.cs" />
-    <Compile Include="Models\PlayerAchievementRepository.cs" />
     <Compile Include="Models\PlayerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,21 +165,20 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Match\Index.cshtml" />
+    <Content Include="Views\Player\Create.cshtml" />
+    <Content Include="Views\Player\Delete.cshtml" />
+    <Content Include="Views\Player\Details.cshtml" />
+    <Content Include="Views\Player\Edit.cshtml" />
+    <Content Include="Views\Player\Index.cshtml" />
+    <Content Include="Views\Player\List.cshtml" />
     <Content Include="Views\Match\Edit.cshtml" />
     <Content Include="Views\Match\Details.cshtml" />
     <Content Include="Views\Match\Create.cshtml" />
-    <Content Include="Views\PlayerAchievements\Create.cshtml" />
-    <Content Include="Views\PlayerAchievements\Delete.cshtml" />
-    <Content Include="Views\PlayerAchievements\Details.cshtml" />
-    <Content Include="Views\PlayerAchievements\Edit.cshtml" />
-    <Content Include="Views\PlayerAchievements\Index.cshtml" />
-    <Content Include="Views\Players\Create.cshtml" />
-    <Content Include="Views\Players\Delete.cshtml" />
-    <Content Include="Views\Players\Details.cshtml" />
-    <Content Include="Views\Players\Edit.cshtml" />
-    <Content Include="Views\Players\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
