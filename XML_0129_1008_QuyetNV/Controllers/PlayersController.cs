@@ -12,12 +12,24 @@ namespace PlayerManagement.Controllers
 {
     public class PlayersController : Controller
     {
-        private PlayerManagementContext db = new PlayerManagementContext();
+        //private ApplicationDbContext db = new ApplicationDbContext();
+        private IPlayerRepository _repository;
+
+        public PlayersController()
+            : this(new PlayerRepository())
+        {
+        }
+
+        public PlayersController(IPlayerRepository repository)
+        {
+            _repository = repository;
+        }
+
 
         // GET: Players
         public ActionResult Index()
         {
-            return View(db.Players.ToList());
+            return View(_repository.GetPlayers());
         }
 
         // GET: Players/Details/5
@@ -27,7 +39,7 @@ namespace PlayerManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player player = db.Players.Find(id);
+            Player player = _repository.GetPlayerByID(id);
             if (player == null)
             {
                 return HttpNotFound();
@@ -50,8 +62,7 @@ namespace PlayerManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Players.Add(player);
-                db.SaveChanges();
+                _repository.InsertPlayer(player);
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +76,7 @@ namespace PlayerManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player player = db.Players.Find(id);
+            Player player = _repository.GetPlayerByID(id);
             if (player == null)
             {
                 return HttpNotFound();
@@ -82,8 +93,9 @@ namespace PlayerManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(player).State = EntityState.Modified;
-                db.SaveChanges();
+                _repository.EditPlayer(player);
+                //db.Entry(player).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(player);
@@ -96,7 +108,7 @@ namespace PlayerManagement.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Player player = db.Players.Find(id);
+            Player player = _repository.GetPlayerByID(id);
             if (player == null)
             {
                 return HttpNotFound();
@@ -109,9 +121,7 @@ namespace PlayerManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Player player = db.Players.Find(id);
-            db.Players.Remove(player);
-            db.SaveChanges();
+            _repository.DeletePlayer(id);
             return RedirectToAction("Index");
         }
 
@@ -119,7 +129,7 @@ namespace PlayerManagement.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }
