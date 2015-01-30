@@ -1,0 +1,86 @@
+﻿@model IEnumerable<PlayerManagement.Models.Player>
+@{    
+}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    @Styles.Render("~/Content/layout.css")
+    <title>Insert title here</title>
+</head>
+<body>   
+    <div class="header">
+        <div class="buttonbar">
+            <img class="button id_1" src="~/img/clubbtt.png" onclick="gotoClub()" />
+            <img class="button id_1" src="~/img/clubbtt.png" /> <img class="button id_1" src="~/img/clubbtt.png" /> <img class="button id_1" src="~/img/clubbtt.png" />
+        </div>
+
+    </div>
+    <div>
+        <div class="tablecontent">
+            <select>
+                <option value="playername">Player Name</option>
+                <option value="playerno">Player Number</option>
+                <option value="playerpos">Player Position</option>
+                <option value="playernation">Player Nation</option>
+            </select> <input class="searchtext" type="text" />
+            <table class="contentsave">
+                <thead>
+                    <tr>                        
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Number
+                        </th>
+                        <th>
+                            Position
+                        </th>
+                        <th>
+                            Date of birth
+                        </th>                        
+                        <th>
+                            Weight
+                        </th>
+                        <th>
+                            Height
+                        </th>                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                        <tr>                                                       
+                            <td>
+                                @Html.ActionLink(item.name, "Details", new { id = item.id }, null);
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.number)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.position)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dateOfBirth.Date)
+                            </td>
+                           
+                            <td>
+                                @Html.DisplayFor(modelItem => item.weight)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.height)
+                            </td> 
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |                                
+                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                            </td>
+                        </tr>
+                      }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
