@@ -115,6 +115,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Achievement.cs" />
+    <Compile Include="Models\AchievementRepository.cs" />
+    <Compile Include="Models\IAchievementRepository.cs" />
     <Compile Include="Models\IMatchRepository.cs" />
     <Compile Include="Models\IPlayerAchievementRepository.cs" />
     <Compile Include="Models\IPlayerRepository.cs" />
