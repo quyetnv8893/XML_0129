@@ -1,10 +1,10 @@
-﻿using MatchManagement.Models;
+﻿using PlayerManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using XML_0129_1008_QuyetNV.Models;
+using PlayerManagement.Models;
 
 namespace PlayerManagement.Controllers
 {

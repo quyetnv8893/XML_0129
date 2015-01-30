@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XML_0129_1008_QuyetNV.Models;
+using PlayerManagement.Models;
 
-namespace MatchManagement.Models
+namespace PlayerManagement.Models
 {
     public interface IMatchRepository
     {

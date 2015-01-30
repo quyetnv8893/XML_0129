@@ -41,7 +41,9 @@ namespace PlayerManagement.Models
 
         public void InsertPlayer(Player player)
         {
-            
+            player.id = (from p in playerData.Descendants("player") orderby p.Element("id").Value descending select p.Element("id").Value).FirstOrDefault();
+
+            //Change later
             playerData.Descendants("players").FirstOrDefault().Add(new XElement("player", new XElement("clubName", player.clubName), new XElement("id", player.id),
                 new XElement("number", player.number), new XElement("name", player.name), new XElement("position", player.position),
                 new XElement("dateOfBirth", player.dateOfBirth.Date), new XElement("placeOfBirth", player.placeOfBirth),

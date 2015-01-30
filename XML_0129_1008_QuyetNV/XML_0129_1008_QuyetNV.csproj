@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XML_0129_1008_QuyetNV</RootNamespace>
+    <RootNamespace>PlayerManagement</RootNamespace>
     <AssemblyName>XML_0129_1008_QuyetNV</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
@@ -116,10 +116,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IMatchRepository.cs" />
+    <Compile Include="Models\IPlayerAchievementRepository.cs" />
     <Compile Include="Models\IPlayerRepository.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRepository.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\PlayerAchievement.cs" />
+    <Compile Include="Models\PlayerAchievementRepository.cs" />
     <Compile Include="Models\PlayerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
