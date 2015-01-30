@@ -53,7 +53,7 @@ namespace PlayerManagement.Models
 
         public void EditAchievement(Achievement achievement)
         {
-            XElement node = achievementData.Descendants("achievements").Elements("achievement").Where(i => i.Element("id").Value.Equals(achievement.name)).FirstOrDefault();
+            XElement node = achievementData.Descendants("achievements").Elements("achievement").Where(i => i.Element("name").Value.Equals(achievement.name)).FirstOrDefault();
 
             node.SetElementValue("name", achievement.name);
             node.SetElementValue("imageLink", achievement.imageLink);

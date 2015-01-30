@@ -477,7 +477,7 @@
   </coaches>
   <achievements>
     <achievement>
-        <name>European Cup</name>
+        <name>European-Cup</name>
         <imageLink>http://upload.wikimedia.org/wikipedia/tr/1/10/UEFA_Champions_League_Cup.jpeg</imageLink>
     </achievement>    
     <!-- TODO: ADD MORE ACHIEVEMENT HERE -->
@@ -491,12 +491,12 @@
   </leagues>
   <matches>
      <match>
-            <id>20150118</id>
-            <time>2015-01-18T11:00:00</time>
-            <name>Getafe - Real Madrid</name>
-            <score>0-3</score>
-            <leagueName>LIGA BBVA</leagueName>
-        </match>
+          <id>20150118</id>
+          <time>2015-01-18T11:00:00</time>
+          <name>Getafe - Real Madrid</name>
+          <score>0-3</score>
+          <leagueName>LIGA BBVA</leagueName>
+    </match>
     <!-- TODO: ADD MORE MATCH HERE -->
     <match>
       <id>1/30/2015</id>
@@ -519,13 +519,7 @@
       <score>1-1</score>
       <leagueName>YUT</leagueName>
     </match>
-    <match>
-      <id>1422613449.88432</id>
-      <time>2015-01-27T00:00:00</time>
-      <name>Real - Quyet</name>
-      <score>0 - 10</score>
-      <leagueName>FU</leagueName>
-    </match>
+  
   </matches>
   <careers>
     <career>
@@ -551,7 +545,7 @@
     <player_achievement>
       <number>3</number>
       <playerId>01</playerId>
-      <achievementName>European Cup</achievementName>
+      <achievementName>European-Cup</achievementName>
     </player_achievement>
     <!-- TODO: ADD MORE PLAYER_ACHIEVEMENT HERE -->
   </players_achievements>
