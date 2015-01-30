@@ -22,6 +22,8 @@ namespace PlayerManagement.Models
         public System.Data.Entity.DbSet<PlayerManagement.Models.Player> Players { get; set; }
 
         public System.Data.Entity.DbSet<PlayerManagement.Models.Achievement> Achievements { get; set; }
+
+        public System.Data.Entity.DbSet<PlayerManagement.Models.PlayerAchievement> PlayerAchievements { get; set; }
     
     }
 }

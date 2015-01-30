@@ -119,6 +119,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AchievementsController.cs" />
     <Compile Include="Controllers\MatchController.cs" />
+    <Compile Include="Controllers\PlayerAchievementsController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +200,11 @@
     <Content Include="Views\Achievements\Details.cshtml" />
     <Content Include="Views\Achievements\Edit.cshtml" />
     <Content Include="Views\Achievements\Index.cshtml" />
+    <Content Include="Views\PlayerAchievements\Create.cshtml" />
+    <Content Include="Views\PlayerAchievements\Delete.cshtml" />
+    <Content Include="Views\PlayerAchievements\Details.cshtml" />
+    <Content Include="Views\PlayerAchievements\Edit.cshtml" />
+    <Content Include="Views\PlayerAchievements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
