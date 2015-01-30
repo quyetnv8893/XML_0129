@@ -15,6 +15,9 @@
         <th>
             @Html.DisplayNameFor(model => model.imageLink)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
         <th></th>
     </tr>
 
@@ -23,6 +26,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.imageLink)
         </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.name }) |
             @Html.ActionLink("Details", "Details", new { id=item.name }) |

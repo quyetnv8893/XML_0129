@@ -8,26 +8,37 @@ using System.Web;
 using System.Web.Mvc;
 using PlayerManagement.Models;
 
-namespace PlayerManagement.Controllers
+namespace AchievementManagement.Controllers
 {
     public class AchievementsController : Controller
     {
-        private PlayerManagementContext db = new PlayerManagementContext();
+        private IAchievementRepository _repository;
+
+        public AchievementsController()
+            : this(new AchievementRepository())
+        {
+        }
+
+        public AchievementsController(IAchievementRepository repository)
+        {
+            _repository = repository;
+        }
+
 
         // GET: Achievements
         public ActionResult Index()
         {
-            return View(db.Achievements.ToList());
+            return View(_repository.GetAchievements());
         }
 
         // GET: Achievements/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string name)
         {
-            if (id == null)
+            if (name == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Achievement achievement = db.Achievements.Find(id);
+            Achievement achievement = _repository.GetAchievementByName(name);
             if (achievement == null)
             {
                 return HttpNotFound();
@@ -46,12 +57,11 @@ namespace PlayerManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "name,imageLink")] Achievement achievement)
+        public ActionResult Create([Bind(Include = "id,clubName,number,name,position,dateOfBirth,placeOfBirth,weight,height,description,imageLink,status")] Achievement achievement)
         {
             if (ModelState.IsValid)
             {
-                db.Achievements.Add(achievement);
-                db.SaveChanges();
+                _repository.InsertAchievement(achievement);
                 return RedirectToAction("Index");
             }
 
@@ -59,13 +69,13 @@ namespace PlayerManagement.Controllers
         }
 
         // GET: Achievements/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string name)
         {
-            if (id == null)
+            if (name == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Achievement achievement = db.Achievements.Find(id);
+            Achievement achievement = _repository.GetAchievementByName(name);
             if (achievement == null)
             {
                 return HttpNotFound();
@@ -78,25 +88,26 @@ namespace PlayerManagement.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "name,imageLink")] Achievement achievement)
+        public ActionResult Edit([Bind(Include = "name, imageLink")] Achievement achievement)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(achievement).State = EntityState.Modified;
-                db.SaveChanges();
+                _repository.EditAchievement(achievement);
+                //db.Entry(achievement).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(achievement);
         }
 
         // GET: Achievements/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string name)
         {
-            if (id == null)
+            if (name == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Achievement achievement = db.Achievements.Find(id);
+            Achievement achievement = _repository.GetAchievementByName(name);
             if (achievement == null)
             {
                 return HttpNotFound();
@@ -109,9 +120,7 @@ namespace PlayerManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Achievement achievement = db.Achievements.Find(id);
-            db.Achievements.Remove(achievement);
-            db.SaveChanges();
+            _repository.DeleteAchievement(id);
             return RedirectToAction("Index");
         }
 
@@ -119,7 +128,7 @@ namespace PlayerManagement.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }
