@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PlayerManagement.Models;
 
 namespace PlayerManagement.Controllers
 {
-    public class MatchController : Controller
+    public class MatchController2 : Controller
     {
         // GET: Match
         private IMatchRepository _repository;
-        public MatchController(): this(new MatchRepository())
+        public MatchController2(): this(new MatchRepository())
         {
         }
 
-        public MatchController(IMatchRepository repository)
+        public MatchController2(IMatchRepository repository)
         {
             _repository = repository;
         }
@@ -87,15 +88,7 @@ namespace PlayerManagement.Controllers
             }
 
             return View(match);
-        }
-
-        public ActionResult Delete(String id)
-        {
-            Match match = _repository.GetMatchByID(id);
-            if (match == null)
-                return RedirectToAction("Index");
-            return View(match);
-        }
+        }       
 
         [HttpPost]
         public ActionResult Delete(Match match)
