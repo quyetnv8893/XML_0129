@@ -116,7 +116,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Achievement.cs" />
+    <Compile Include="Models\IAchievementRepository.cs" />
     <Compile Include="Models\IMatchRepository.cs" />
+    <Compile Include="Models\IPlayerAchievementRepository.cs" />
+    <Compile Include="Models\IPlayerRepository.cs" />
     <Compile Include="Models\League.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRepository.cs" />
