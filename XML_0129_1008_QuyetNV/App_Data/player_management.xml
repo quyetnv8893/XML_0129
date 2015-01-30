@@ -472,13 +472,6 @@
     <!-- TODO: ADD MORE LEAGUES HERE ( IF AVAILABLE ) -->
   </leagues>
   <matches>
-    <match>
-      <id>20150118</id>
-      <time>2015-01-18T11:00:00</time>
-      <name>Getafe - Real Madrid</name>
-      <score>0-3</score>
-      <leagueName>LIGA BBVA</leagueName>
-    </match>
     <!-- TODO: ADD MORE MATCH HERE -->
     <match>
       <id />

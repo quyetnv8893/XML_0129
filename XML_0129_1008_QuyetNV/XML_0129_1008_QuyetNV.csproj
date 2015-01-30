@@ -115,10 +115,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Achievement.cs" />
     <Compile Include="Models\IMatchRepository.cs" />
     <Compile Include="Models\League.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRepository.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\PlayerAchievement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
