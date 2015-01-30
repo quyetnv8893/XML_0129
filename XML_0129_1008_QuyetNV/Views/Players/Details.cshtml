@@ -99,6 +99,8 @@
             @Html.DisplayFor(model => model.status)
         </dd>
 
+        @Html.ActionLink("View achievements", "Index", "PlayerAchievements", new { id = Model.id }, null)
+
     </dl>
 </div>
 <p>

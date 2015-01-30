@@ -13,12 +13,22 @@ namespace PlayerManagement.Controllers
     public class PlayerAchievementsController : Controller
     {
         private PlayerManagementContext db = new PlayerManagementContext();
+        private IPlayerAchievementRepository _repository;
+
+        public PlayerAchievementsController()
+            : this(new PlayerAchievementRepository())
+        {
+        }
+
+        public PlayerAchievementsController(IPlayerAchievementRepository repository)
+        {
+            _repository = repository;
+        }
 
         // GET: PlayerAchievements
-        public ActionResult Index()
+        public ActionResult Index(String id)
         {
-            var playerAchievements = db.PlayerAchievements.Include(p => p.achievement);
-            return View(playerAchievements.ToList());
+            return View(_repository.GetPlayerAchievementsByPlayerID(id));
         }
 
         // GET: PlayerAchievements/Details/5
@@ -39,7 +49,8 @@ namespace PlayerManagement.Controllers
         // GET: PlayerAchievements/Create
         public ActionResult Create()
         {
-            ViewBag.achievementName = new SelectList(db.Achievements, "name", "imageLink");
+            ViewBag.playerId = new SelectList(db.Players, "id", "name");
+            ViewBag.achievementName = new SelectList(db.Achievements, "name", "name");
             return View();
         }
 
