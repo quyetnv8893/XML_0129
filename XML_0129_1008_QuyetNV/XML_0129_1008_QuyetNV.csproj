@@ -115,9 +115,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ILeagueRepository.cs" />
     <Compile Include="Models\IMatchRepository.cs" />
     <Compile Include="Models\League.cs" />
     <Compile Include="Models\Match.cs" />
+    <Compile Include="Models\LeagueRepository.cs" />
     <Compile Include="Models\MatchRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
