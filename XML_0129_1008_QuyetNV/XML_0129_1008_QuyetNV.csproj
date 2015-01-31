@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -111,16 +117,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AchievementsController.cs" />
     <Compile Include="Controllers\MatchController.cs" />
+    <Compile Include="Controllers\PlayerAchievementsController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ILeagueRepository.cs" />
     <Compile Include="Models\IMatchRepository.cs" />
+    <Compile Include="Models\IPlayerAchievementRepository.cs" />
+    <Compile Include="Models\IPlayerRepository.cs" />
     <Compile Include="Models\League.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\LeagueRepository.cs" />
     <Compile Include="Models\MatchRepository.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\PlayerAchievement.cs" />
+    <Compile Include="Models\PlayerAchievementRepository.cs" />
+    <Compile Include="Models\PlayerManagementContext.cs" />
+    <Compile Include="Models\PlayerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +188,21 @@
     <Content Include="Views\Match\Details.cshtml" />
     <Content Include="Views\Match\Create.cshtml" />
     <Content Include="Views\Match\Delete.cshtml" />
+    <Content Include="Views\Players\Create.cshtml" />
+    <Content Include="Views\Players\Delete.cshtml" />
+    <Content Include="Views\Players\Details.cshtml" />
+    <Content Include="Views\Players\Edit.cshtml" />
+    <Content Include="Views\Players\Index.cshtml" />
+    <Content Include="Views\Achievements\Create.cshtml" />
+    <Content Include="Views\Achievements\Delete.cshtml" />
+    <Content Include="Views\Achievements\Details.cshtml" />
+    <Content Include="Views\Achievements\Edit.cshtml" />
+    <Content Include="Views\Achievements\Index.cshtml" />
+    <Content Include="Views\PlayerAchievements\Create.cshtml" />
+    <Content Include="Views\PlayerAchievements\Delete.cshtml" />
+    <Content Include="Views\PlayerAchievements\Details.cshtml" />
+    <Content Include="Views\PlayerAchievements\Edit.cshtml" />
+    <Content Include="Views\PlayerAchievements\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
